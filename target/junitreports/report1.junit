@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="21.876" tests="2" skipped="0" failures="0" errors="0">
+<testcase classname="Validate End To End Shopping Workflow" name="Verify customer can login, search product, add item to cart and checkout successfully - Example #1.1" time="11.749">
+<system-out><![CDATA[
+Given login page should be open in default browser..........................passed
+When click on email address field and add valid email "bharathkumar172002@gmail.com".passed
+And then click on password field and enter valid "bharath123"...............passed
+And now click on login button "success".....................................passed
+Then login successfully and redirect to ninja home page.....................passed
+When ninja search input field receives "iphone".............................passed
+Then ninja custom product list matches criteria.............................passed
+When user clicks on add to cart button for the item.........................passed
+Then product should be added to cart successfully...........................passed
+When user clicks on the black shopping cart button..........................passed
+And clicks on the checkout option...........................................passed
+Then user should be redirected to the checkout page.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Validate End To End Shopping Workflow" name="Verify customer can login, search product, add item to cart and checkout successfully - Example #1.2" time="9.952">
+<system-out><![CDATA[
+Given login page should be open in default browser..........................passed
+When click on email address field and add valid email "bharathkumar172002@gmail.com".passed
+And then click on password field and enter valid "bharath123"...............passed
+And now click on login button "success".....................................passed
+Then login successfully and redirect to ninja home page.....................passed
+When ninja search input field receives "macbook"............................passed
+Then ninja custom product list matches criteria.............................passed
+When user clicks on add to cart button for the item.........................passed
+Then product should be added to cart successfully...........................passed
+When user clicks on the black shopping cart button..........................passed
+And clicks on the checkout option...........................................passed
+Then user should be redirected to the checkout page.........................passed
+]]></system-out>
+</testcase>
+</testsuite>
