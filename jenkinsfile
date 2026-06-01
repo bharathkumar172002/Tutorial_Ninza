@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'master',
-                    url: 'https://github.com/bharathkumar172002/wipro_Trainning_Project.git'
+                    url: 'https://github.com/bharathkumar172002/Tutorial_Ninza.git'
             }
         }
  
