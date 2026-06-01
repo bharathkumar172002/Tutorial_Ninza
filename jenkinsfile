@@ -3,38 +3,49 @@ pipeline {
  
     tools {
         maven 'maven 3'
+        jdk 'jdk21'
     }
  
     stages {
  
         stage('Checkout') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/bharathkumar172002/wipro_Trainning_Project'
+                git branch: 'master',
+                    url: 'https://github.com/bharathkumar172002/wipro_Trainning_Project.git'
             }
         }
  
+ 
+ 
         stage('Build') {
             steps {
-                bat 'mvn clean'
+                dir('Tutorial_Ninza') {
+                    bat 'mvn clean'
+                }
             }
         }
  
         stage('Compile') {
             steps {
-                bat 'mvn compile'
+                dir('Tutorial_Ninza') {
+                    bat 'mvn compile'
+                }
             }
         }
  
         stage('Test') {
             steps {
-                bat 'mvn test'
+                dir('Tutorial_Ninza') {
+                    bat 'mvn test'
+                }
             }
         }
  
         stage('Package') {
             steps {
-                bat 'mvn package'
+                dir('Tutorial_Ninza') {
+                    bat 'mvn package'
+                }
             }
         }
     }
