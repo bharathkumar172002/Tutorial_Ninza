@@ -3,7 +3,7 @@ pipeline {
  
     tools {
         maven 'maven 3'
-        jdk 'jdk26'
+        jdk 'jdk-26' // Fix 1: jdk26 ko badal kar jdk-26 kiya
     }
  
     stages {
@@ -15,37 +15,28 @@ pipeline {
             }
         }
  
- 
- 
+        // Fix 2: Sabhi stages se dir('Tutorial_Ninza') hata diya hai
         stage('Build') {
             steps {
-                dir('Tutorial_Ninza') {
-                    bat 'mvn clean'
-                }
+                bat 'mvn clean'
             }
         }
  
         stage('Compile') {
             steps {
-                dir('Tutorial_Ninza') {
-                    bat 'mvn compile'
-                }
+                bat 'mvn compile'
             }
         }
  
         stage('Test') {
             steps {
-                dir('Tutorial_Ninza') {
-                    bat 'mvn test'
-                }
+                bat 'mvn test'
             }
         }
  
         stage('Package') {
             steps {
-                dir('Tutorial_Ninza') {
-                    bat 'mvn package'
-                }
+                bat 'mvn package'
             }
         }
     }
