@@ -3,7 +3,7 @@ pipeline {
  
     tools {
         maven 'maven 3'
-        jdk 'jdk-26' // Fix 1: jdk26 ko badal kar jdk-26 kiya
+        jdk 'jdk26' // Fix 1: jdk26 ko badal kar jdk-26 kiya
     }
  
     stages {
