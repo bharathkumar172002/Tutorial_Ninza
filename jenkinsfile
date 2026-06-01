@@ -9,7 +9,7 @@ pipeline {
  
         stage('Checkout') {
             steps {
-                git branch: 'master',
+                git branch: 'main',
                     url: 'https://github.com/bharathkumar172002/wipro_Trainning_Project'
             }
         }
