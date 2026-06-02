@@ -3,7 +3,7 @@ pipeline {
  
     tools {
         maven 'maven 3'
-        jdk 'jdk26' // Fix 1: jdk26 ko badal kar jdk-26 kiya
+        jdk 'jdk-26'
     }
  
     stages {
@@ -15,7 +15,6 @@ pipeline {
             }
         }
  
-        // Fix 2: Sabhi stages se dir('Tutorial_Ninza') hata diya hai
         stage('Build') {
             steps {
                 bat 'mvn clean'
@@ -37,6 +36,20 @@ pipeline {
         stage('Package') {
             steps {
                 bat 'mvn package'
+            }
+        }
+ 
+        stage('Docker Build') {
+            steps {
+                // Bina kisi dir block ke direct root folder se build karega
+                bat 'docker build -t cucumber-framework .'
+            }
+        }
+ 
+        stage('Docker Run') {
+            steps {
+                // Image ko run karne ke liye
+                bat 'docker run --rm cucumber-framework'
             }
         }
     }
